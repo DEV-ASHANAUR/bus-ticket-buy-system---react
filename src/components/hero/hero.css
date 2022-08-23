@@ -1,0 +1,114 @@
+.bg-banner{
+    background:url('../../img//themebus.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    /* min-height: 90vh; */
+    background-repeat: no-repeat;
+}
+.overly {
+    background: #1d142899;
+    width: 100%;
+    /* min-height: 88vh; */
+    min-height: calc(100vh - 117px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.overly h1{
+    color: #fff;
+}
+.left-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.right-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.head-img{
+    position: absolute;
+    bottom: 0;
+}
+.discover-btn{
+    background:none;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 10px 15px;
+    transition: 0.5s ease;
+    font-size: 18px;
+}
+.submit-btn {
+    background: none;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 4px 16px;
+    transition: 0.5s ease;
+    font-size: 18px;
+    width: 100%;
+}
+.submit-btn:hover{
+    background:#fff;
+    color: #000;
+}
+.discover-btn:hover{
+    background:#fff;
+    color: #000;
+}
+.head-description{
+    font-size: 20px;
+    width: 50%;
+    color: #fff;
+}
+.form-container {
+    background-color: #05c75780;
+    padding: 25px 30px;
+    color: #fff;
+    border-radius: 8PX;
+}
+.input-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* border-radius: .375rem; */
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.input-control:focus {
+    outline: none;
+}
+/* media */
+
+@media (max-width: 575.98px) {
+    .head-description{
+        font-size: 18px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .head-description{
+        width: 90%;
+    }
+    .left-side{
+        margin-top: 35px;
+        margin-bottom: 40px;
+    }
+    .right-side{
+        margin-bottom: 50px;
+    }
+}

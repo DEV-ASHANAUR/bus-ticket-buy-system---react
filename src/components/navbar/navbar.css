@@ -1,0 +1,21 @@
+.navbar-nav a {
+    font-size: 19px;
+    font-weight: 700;
+}
+.top-section {
+    /* background-color: rgb(23, 170, 121); */
+    background-color: #05c757;
+}
+.top-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+button.btn-logout {
+    background: none;
+    border: none;
+    padding: 7px 0;
+    color: red;
+    font-size: 20px;
+}
