@@ -19,3 +19,6 @@ button.btn-logout {
     color: red;
     font-size: 20px;
 }
+.header{
+    border-bottom: 1px solid green;
+}

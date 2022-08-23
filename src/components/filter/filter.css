@@ -1,0 +1,11 @@
+.operater {
+    background: #fff;
+    padding: 10px 15px;
+}
+.operater>h5{
+    font-size: 0.9rem;
+    color: green;
+    padding: 0;
+    background: #fff;
+    margin-top: -5.5rem;
+}

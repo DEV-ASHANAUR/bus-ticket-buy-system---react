@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import './hero.css'
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import EmojiTransportationIcon from '@mui/icons-material/EmojiTransportation';
 
 const Hero = () => {
     const [startDate, setStartDate] = useState(new Date());
@@ -17,7 +18,7 @@ const Hero = () => {
                             <h1 className='my-3' style={{ fontWeight: '700' }}>Save Time Make Life Easy!</h1>
                             <p className='head-description'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus illo nulla nobis voluptate ipsa !.</p>
                             <div>
-                                <button className='discover-btn'>Show All Routes</button>
+                                <button className='discover-btn' data-bs-toggle="modal" data-bs-target="#staticBackdrop">Services</button>
                             </div>
                         </div>
                         <div className="col-md-4 right-side">
@@ -40,6 +41,58 @@ const Hero = () => {
                                 </div>
                                 <button className='submit-btn'>Search</button>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* modal */}
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Available Service</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div className="container">
+                                <h4 className='route-title'>#Routes</h4>
+                                <div className="route-list">
+                                    <div>
+                                        <span className='text-primary'><LocationOnIcon /></span>
+                                        <span>Dhaka to Faridpur</span>
+                                    </div>
+                                    <div>
+                                        <span className='text-primary'><LocationOnIcon /></span>
+                                        <span>Dhaka to Dinajpur</span>
+                                    </div>
+                                    <div>
+                                        <span className='text-primary'><LocationOnIcon /></span>
+                                        <span>Dhaka to kustiya</span>
+                                    </div>
+                                    <div>
+                                        <span className='text-primary'><LocationOnIcon /></span>
+                                        <span>Dhaka to rajshai</span>
+                                    </div>
+                                </div>
+                                <h4 className='route-title mt-5'>#Bus Operators</h4>
+                                <div className="route-list">
+                                    <div>
+                                        <span className='text-primary'><EmojiTransportationIcon /></span>
+                                        <span>Green Line Paribahan</span>
+                                    </div>
+                                    <div>
+                                        <span className='text-primary'><EmojiTransportationIcon /></span>
+                                        <span>Hanif Paribahan</span>
+                                    </div>
+                                    <div>
+                                        <span className='text-primary'><EmojiTransportationIcon /></span>
+                                        <span>Rabeya Paribahan</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>

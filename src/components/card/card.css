@@ -1,0 +1,55 @@
+.card-head{
+    display: flex;
+    justify-content: space-between;
+}
+.list-body {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    background-color: #fff;
+    margin-top: 10px;
+    padding: 15px 10px;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.title-style{
+    margin-bottom: 10px;
+    color: green;
+}
+.bus-info{
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    font-size: 0.8rem;
+}
+.bus-name{
+    font-size: 1rem;
+}
+.s-time{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+.arr-time{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+.avi-seats{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+.price{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media (max-width: 575.98px) {
+    .list-body {
+        flex-direction: column;
+        
+    }
+}

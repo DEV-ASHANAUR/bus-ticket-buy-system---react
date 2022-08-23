@@ -1,0 +1,28 @@
+.dep-title {
+    color: green;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.target-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+}
+
+.destination {
+    font-size: 1.2rem;
+    color: green;
+    margin: 0;
+}
+
+.target-text-wrapper span {
+    font-size: 0.9rem;
+}
+
+.filter-wrapper h5 {
+    font-size: 0.9rem;
+    color: green;
+    background: #fff;
+    margin-top: -5.5rem;
+}
