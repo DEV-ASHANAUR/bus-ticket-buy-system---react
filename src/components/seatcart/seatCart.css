@@ -1,0 +1,23 @@
+.seats_status{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.available{
+    display: flex;
+    gap: 5px;
+}
+.booked{
+    display: flex;
+    gap: 5px;
+}
+.booked span{
+    color: red;
+}
+.selected{
+    display: flex;
+    gap: 5px;
+}
+.selected span{
+    color: green;
+}

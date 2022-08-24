@@ -3,6 +3,7 @@ import './hero.css'
 import DatePicker from "react-datepicker";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import EmojiTransportationIcon from '@mui/icons-material/EmojiTransportation';
+import { Link } from 'react-router-dom'
 
 const Hero = () => {
     const [startDate, setStartDate] = useState(new Date());
@@ -39,7 +40,9 @@ const Hero = () => {
                                     <label htmlFor="form">Return (Optional)</label>
                                     <DatePicker selected={returnDate} minDate={new Date()} onChange={(date) => setReturnDate(date)} className="input-control" />
                                 </div>
-                                <button className='submit-btn'>Search</button>
+                                <Link to="/list">
+                                    <button className='submit-btn'>Search</button>
+                                </Link>
                             </div>
                         </div>
                     </div>

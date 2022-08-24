@@ -9,6 +9,7 @@ import {
 import NotFound from './pages/NotFound';
 import List from './pages/List';
 import Navbar from './components/navbar/Navbar';
+import Seats from './pages/Seats';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/list" element={<List />}></Route>
+          <Route path="/seat/:id" element={<Seats />}></Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

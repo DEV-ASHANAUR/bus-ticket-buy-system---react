@@ -1,0 +1,32 @@
+.parrent-seat{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.seat-wrapper{
+    display: flex;
+    border: 2px solid #000;
+    width: 60%;
+    flex-direction: column;
+}
+.dirver {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    padding: 10px;
+}
+.seats{
+    display: flex;
+    flex-direction: column;
+}
+.seat-row{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.seat{
+    cursor: pointer;
+}
+.seat:hover span{
+    color:green
+}

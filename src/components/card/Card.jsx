@@ -1,5 +1,6 @@
 import React from 'react'
 import './card.css'
+import {Link} from 'react-router-dom';
 const Card = () => {
   return (
     <div className='card-wrapper'>
@@ -29,7 +30,9 @@ const Card = () => {
         <div className="price">
           <span className='title-style'>Fare</span>
           <span>700 Tk</span>
+          <Link to="/seat/24354">
           <button className='btn btn-success mt-2'>View Seats</button>
+          </Link>
         </div>
 
       </div>

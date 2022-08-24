@@ -9,7 +9,7 @@ const List = () => {
       <Heading />
       <section style={{ backgroundColor: "#F7F7F7" }}>
         <div className="container">
-          <div className="row">
+          <div className="row pb-5">
             <div className="col-md-3 col-sm-12">
               <div className="filter-wrapper mt-3">
                 <h5 className='m-0 py-2 ps-3'>Refine Search</h5>
