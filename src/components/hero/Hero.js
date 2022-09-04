@@ -3,11 +3,31 @@ import './hero.css'
 import DatePicker from "react-datepicker";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import EmojiTransportationIcon from '@mui/icons-material/EmojiTransportation';
+import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux';
+import { newSearch } from '../../redux/searchSlice';
 
 const Hero = () => {
     const [startDate, setStartDate] = useState(new Date());
     const [returnDate, setReturnDate] = useState(new Date());
+    const [startingPoint,setStartingPoint] = useState("");
+    const [endingPoint,setEndingPoint] = useState("");
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    //handleSearch
+    const handleSearch = () =>{
+        if(startDate != "" && startingPoint != "" && endingPoint != ""){
+            dispatch(newSearch({staring_point:startingPoint.toLowerCase(),ending_point:endingPoint.toLowerCase(),date:startDate,return_date:returnDate}));
+            navigate("/list",{state:{staring_point:startingPoint.toLowerCase(),ending_point:endingPoint.toLowerCase(),date:startDate,return_date:returnDate}});
+        }else{
+            toast.error("All Field Are Required!");
+        }
+    }
 
     return (
         <div className='bg-banner'>
@@ -26,11 +46,11 @@ const Hero = () => {
                             <div className="form-container">
                                 <div className="form-group mb-3">
                                     <label htmlFor="form">From</label>
-                                    <input type="text" className='input-control' placeholder='From Destination' />
+                                    <input type="text" value={startingPoint} onChange={(e)=>setStartingPoint(e.target.value)} className='input-control text-capitalize' placeholder='From Destination' />
                                 </div>
                                 <div className="form-group mb-3">
                                     <label htmlFor="to">To</label>
-                                    <input type="text" className='input-control' placeholder='Target Destination' />
+                                    <input type="text" value={endingPoint} onChange={(e)=>setEndingPoint(e.target.value)} className='input-control text-capitalize' placeholder='Target Destination' />
                                 </div>
                                 <div className="form-group mb-3">
                                     <label htmlFor="form">Date</label>
@@ -40,23 +60,21 @@ const Hero = () => {
                                     <label htmlFor="form">Return (Optional)</label>
                                     <DatePicker selected={returnDate} minDate={new Date()} onChange={(date) => setReturnDate(date)} className="input-control" />
                                 </div>
-                                <Link to="/list">
-                                    <button className='submit-btn'>Search</button>
-                                </Link>
+                                <button className='submit-btn' onClick={handleSearch}>Search</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             {/* modal */}
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">Available Service</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="staticBackdropLabel">Available Service</h5>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
+                        <div clasName="modal-body">
                             <div className="container">
                                 <h4 className='route-title'>#Routes</h4>
                                 <div className="route-list">
@@ -94,12 +112,13 @@ const Hero = () => {
                                 </div>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     )
 }

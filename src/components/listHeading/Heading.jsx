@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './heading.css';
 import carphoto from '../../img/journey.svg';
-const heading = () => {
+import { useSelector } from 'react-redux';
+import { format } from "date-fns";
+const Heading = ({fdate}) => {
+    const {starting_point,ending_point,date} = useSelector((state)=>state.search);
+    
     return (
         <section style={{backgroundColor:"#ECECEC"}}>
             <div className="container">
@@ -11,8 +15,10 @@ const heading = () => {
                         <div className='target-wrapper'>
                             <img src={carphoto} alt="" />
                             <div className="target-text-wrapper">
-                                <h4 className='destination'>Dhaka - Kustiya</h4>
-                                <span>24 August, 2022</span>
+                                <h4 className='destination text-capitalize'>{starting_point&&starting_point} - {ending_point&&ending_point}</h4>
+                                <span>
+                                {`${format(fdate,"MM/dd/yyyy")}`}
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -22,4 +28,4 @@ const heading = () => {
     )
 }
 
-export default heading
+export default Heading
