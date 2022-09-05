@@ -41,12 +41,12 @@ const SeatModal = ({ show, setShow, busId, busPrice,operat,time }) => {
     //handleCheckPage
     const handleCheckPage = ()=>{
         let info = {
+            busId:busId,
             dep_time : time,
             operator: operat,
             selectedSeats:selectedSeats,
         }
         navigate("/checkout",{state:{info}});
-        // alert("okey");
     }
 
     if (loading) { return (<h1>loading..</h1>) }

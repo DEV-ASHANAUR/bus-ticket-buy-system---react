@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './seatCart.css';
 import ChairIcon from '@mui/icons-material/Chair';
-const SeatCart = ({ selectedSeats,handleCheckPage }) => {
+const SeatCart = ({ selectedSeats, handleCheckPage }) => {
     let total = 0;
     total = selectedSeats.length > 0 ? selectedSeats.length * selectedSeats[0].price : 0;
     return (
@@ -29,12 +29,12 @@ const SeatCart = ({ selectedSeats,handleCheckPage }) => {
                         <th>Class</th>
                     </tr>
                 </thead>
-                <tbody className='text-center' style={{height:"205px"}}>
-                    
+                <tbody className='text-center' style={{ height: "205px" }}>
+
                     {selectedSeats.length ? (
                         <>
                             {
-                                selectedSeats.map((item,i) => (
+                                selectedSeats.map((item, i) => (
                                     <tr key={i}>
                                         <td>{item.number}</td>
                                         <td>{item.price} tk</td>
