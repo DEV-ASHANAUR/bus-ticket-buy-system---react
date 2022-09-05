@@ -3,8 +3,8 @@ import './layout.css'
 import CatchingPokemonIcon from '@mui/icons-material/CatchingPokemon';
 import ChairOutlinedIcon from '@mui/icons-material/ChairOutlined';
 import ChairIcon from '@mui/icons-material/Chair';
-const Layout = ({seatData,sdate}) => {
-    const [selectedSeats,setSelectedSeats] = useState([]);
+const Layout = ({seatData,sdate,busPrice,selectedSeats,setSelectedSeats}) => {
+    // const [selectedSeats,setSelectedSeats] = useState([]);
     //isAvailable
     const isAvailable = (seatNumbers)=>{
         // console.log("Seat",seatNumbers);
@@ -19,14 +19,14 @@ const Layout = ({seatData,sdate}) => {
         if(event.currentTarget.classList.contains("selected")){
             
             event.currentTarget.classList.remove("selected");
-            setSelectedSeats(selectedSeats.filter((item)=>item !== number));
+            setSelectedSeats(selectedSeats.filter((item)=>item.number !== number));
             
         }else{
             if(selectedSeats.length > 4){
                 console.log("limit exist");
             }else{
                 event.currentTarget.classList.add("selected");
-                setSelectedSeats([...selectedSeats,number]);
+                setSelectedSeats([...selectedSeats,{number:number,class:"Economy",price:busPrice}]);
             }
         }
     }

@@ -29,11 +29,11 @@ const Card = ({item,handleSeat}) => {
         </div>
         <div className="price">
           <span className='title-style'>Fare</span>
-          <span>700 Tk</span>
+          <span>{item.price} Tk</span>
           {/* <Link to="/seat/24354">
           <button className='btn btn-success mt-2'>View Seats</button>
           </Link> */}
-          <button className='btn btn-success mt-2' onClick={()=>handleSeat(item._id)}>View Seats</button>
+          <button className='btn btn-success mt-2' onClick={()=>handleSeat(item._id,item.price,item.operator,item.dep_time)}>View Seats</button>
         </div>
 
       </div>

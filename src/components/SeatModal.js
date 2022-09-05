@@ -6,12 +6,14 @@ import SeatCart from './seatcart/SeatCart';
 import { useSelector } from 'react-redux';
 import { format } from "date-fns";
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-const SeatModal = ({ show, setShow, busId }) => {
+const SeatModal = ({ show, setShow, busId, busPrice,operat,time }) => {
     const Base_url = "http://localhost:8000/api";
+    const [selectedSeats,setSelectedSeats] = useState([]);
     const { starting_point, ending_point, date } = useSelector((state) => state.search);
     const [loading, setLoading] = useState(false);
-
+    const navigate = useNavigate();
     const [seatData, setSeatData] = useState([]);
 
     useEffect(() => {
@@ -36,6 +38,17 @@ const SeatModal = ({ show, setShow, busId }) => {
             console.log(error)
         }
     }
+    //handleCheckPage
+    const handleCheckPage = ()=>{
+        let info = {
+            dep_time : time,
+            operator: operat,
+            selectedSeats:selectedSeats,
+        }
+        navigate("/checkout",{state:{info}});
+        // alert("okey");
+    }
+
     if (loading) { return (<h1>loading..</h1>) }
 
     return (
@@ -52,10 +65,10 @@ const SeatModal = ({ show, setShow, busId }) => {
                         <div className="bg-white" >
                             <div className="row pb-5">
                                 <div className="col-md-5 mb-4">
-                                    <Layout seatData={seatData} sdate={date} />
+                                    <Layout seatData={seatData} sdate={date} busPrice={busPrice} selectedSeats={selectedSeats} setSelectedSeats={setSelectedSeats} />
                                 </div>
                                 <div className="col-md-7 mb-4">
-                                    <SeatCart />
+                                    <SeatCart selectedSeats={selectedSeats} handleCheckPage={handleCheckPage} />
                                 </div>
                             </div>
                             <Button onClick={() => book("6313b0e349995caa814ee58c")}>book</Button>

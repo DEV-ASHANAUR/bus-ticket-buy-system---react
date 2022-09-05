@@ -19,6 +19,9 @@ const List = () => {
   const location = useLocation();
   const [show, setShow] = useState(false);
   const [busId,setBusId] = useState(undefined);
+  const [operat,setOperat] = useState(undefined);
+  const [time,setTime] = useState(undefined);
+  const [busPrice,setBusPrice] = useState(undefined);
 
   // const [loading,setLoading] = useState(false); 
   // const {data,loading,reFetch} = useFetch(`/bus?starting_point=${start}&ending_point=${end}`);
@@ -37,8 +40,11 @@ const List = () => {
     { id: 2, checked: false, label: 'Non-Ac'}
   ]);
 
-  const handleSeat = (busId)=>{
+  const handleSeat = (busId,busPrice,opert,arr_time)=>{
     setBusId(busId);
+    setBusPrice(busPrice);
+    setOperat(opert);
+    setTime(arr_time);
     setShow(true);
   }
 
@@ -150,7 +156,7 @@ const List = () => {
             </div>
           </div>
         </div>
-        {show && <SeatModal show={show} setShow={setShow} busId={busId} />}
+        {show && <SeatModal show={show} setShow={setShow} busId={busId} busPrice={busPrice} operat={operat} time={time} />}
       </section>
     </>
   )

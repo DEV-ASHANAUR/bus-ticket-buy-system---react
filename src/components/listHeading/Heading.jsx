@@ -17,7 +17,7 @@ const Heading = ({fdate}) => {
                             <div className="target-text-wrapper">
                                 <h4 className='destination text-capitalize'>{starting_point&&starting_point} - {ending_point&&ending_point}</h4>
                                 <span>
-                                {`${format(fdate,"MM/dd/yyyy")}`}
+                                {`${format(new Date(date).getTime(),"MM/dd/yyyy")}`}
                                 </span>
                             </div>
                         </div>
