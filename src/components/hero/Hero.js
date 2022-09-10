@@ -25,7 +25,8 @@ const Hero = () => {
             dispatch(newSearch({staring_point:startingPoint.toLowerCase(),ending_point:endingPoint.toLowerCase(),date:startDate,return_date:returnDate}));
             navigate("/list",{state:{staring_point:startingPoint.toLowerCase(),ending_point:endingPoint.toLowerCase(),date:startDate,return_date:returnDate}});
         }else{
-            toast.error("All Field Are Required!");
+            toast.error("All Field Are Required!",{position: "bottom-right",
+            autoClose: 1000,draggable: true});
         }
     }
 

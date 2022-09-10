@@ -10,6 +10,7 @@ import NotFound from './pages/NotFound';
 import List from './pages/List';
 import Navbar from './components/navbar/Navbar';
 import Checkout from './pages/Checkout';
+import Invoice from './pages/Invoice';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/" element={<Home />}></Route>
           <Route path="/list" element={<List />}></Route>
           <Route path="/checkout" element={<Checkout />}></Route>
+          <Route path="/invoice" element={<Invoice />}></Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom';
 const SeatModal = ({ show, setShow, busId, busPrice,operat,time }) => {
     const Base_url = "http://localhost:8000/api";
     const [selectedSeats,setSelectedSeats] = useState([]);
+    const [selectedSeatId,setSelectedSeatId] = useState([]);
     const { starting_point, ending_point, date } = useSelector((state) => state.search);
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
@@ -30,14 +31,14 @@ const SeatModal = ({ show, setShow, busId, busPrice,operat,time }) => {
         fetchSeats();
     }, [busId])
 
-    const book = async (roomId) => {
-        try {
-            const res = await axios.put(`${Base_url}/seat/availability/${roomId}`, { date });
-            console.log(res);
-        } catch (error) {
-            console.log(error)
-        }
-    }
+    // const book = async (roomId) => {
+    //     try {
+    //         const res = await axios.put(`${Base_url}/seat/availability/${roomId}`, { date });
+    //         console.log(res);
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // }
     //handleCheckPage
     const handleCheckPage = ()=>{
         let info = {
@@ -45,6 +46,7 @@ const SeatModal = ({ show, setShow, busId, busPrice,operat,time }) => {
             dep_time : time,
             operator: operat,
             selectedSeats:selectedSeats,
+            selectedSeatId:selectedSeatId,
         }
         navigate("/checkout",{state:{info}});
     }
@@ -65,13 +67,13 @@ const SeatModal = ({ show, setShow, busId, busPrice,operat,time }) => {
                         <div className="bg-white" >
                             <div className="row pb-5">
                                 <div className="col-md-5 mb-4">
-                                    <Layout seatData={seatData} sdate={date} busPrice={busPrice} selectedSeats={selectedSeats} setSelectedSeats={setSelectedSeats} />
+                                    <Layout seatData={seatData} sdate={date} busPrice={busPrice} selectedSeats={selectedSeats} setSelectedSeats={setSelectedSeats} selectedSeatId={selectedSeatId} setSelectedSeatId={setSelectedSeatId} />
                                 </div>
                                 <div className="col-md-7 mb-4">
                                     <SeatCart selectedSeats={selectedSeats} handleCheckPage={handleCheckPage} />
                                 </div>
                             </div>
-                            <Button onClick={() => book("6313b0e349995caa814ee58c")}>book</Button>
+                            {/* <Button onClick={() => book("6313b0e349995caa814ee58c")}>book</Button> */}
                         </div>
                     </section>
                 </Modal.Body>
