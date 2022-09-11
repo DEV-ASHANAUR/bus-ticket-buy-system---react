@@ -8,7 +8,8 @@ const Invoice = () => {
     const [loader, setLoader] = useState(false);
     const [data, setDate] = useState({});
     const location = useLocation();
-    const invoiceId = location.state.invoiceId;
+    // const invoiceId = location.state.invoiceId;
+    const invoiceId = location.pathname.split('/')[2];
     const componentRef = useRef();
 
     useEffect(() => {
@@ -44,6 +45,9 @@ const Invoice = () => {
                         <p className='my-2 text-capitalize'>Phone : {data.pasenMobile}</p>
                         <p className='my-2 text-capitalize'>Email : {data.pasenEmail}</p>
                         <p className='my-2 text-capitalize'>Address : {data.address}</p>
+                        <h5>Payment Details</h5>
+                        <p className='my-2 text-capitalize'>Payment Status : {data.status}</p>
+                        <p className='my-2 text-capitalize'>PayType : {data.payType}</p>
                         <h5>Bus Details</h5>
                         <p className='my-2 text-capitalize'>Travel Date : {new Date(data.dateOfTravel).toLocaleString('default', { weekday: 'long' })} -
                             {new Date(data.dateOfTravel).getDate()} -
