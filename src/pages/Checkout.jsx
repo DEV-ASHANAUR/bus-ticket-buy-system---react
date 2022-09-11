@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Heading from '../components/listHeading/Heading';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom'
-import { format } from "date-fns";
+// import { format } from "date-fns";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
@@ -156,7 +156,7 @@ const Checkout = () => {
                                 <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                                     <p className="text-center border border-danger my-4 p-2 text-info">Your ticket(s) would be reserved and inactive till our call center agents call you and verify your credentials. Ticket(s) would become active when you pay the due amount during the delivery of ticket(s) at your doorstep.</p>
                                     <textarea className='input-control' onChange={(e) => setAddress(e.target.value)} placeholder='Enter Ticket delivery Addrees'></textarea>
-                                    <button style={{ borderRadius: "0px" }} className='btn btn-primary my-5 d-block w-50' onClick={handleCash}>Confirm Reservation</button>
+                                    <button style={{ borderRadius: "0px" }} className='btn btn-primary my-5 d-block w-50' onClick={handleCash} disabled={loader}>Confirm Reservation</button>
                                 </div>
                             </div>
                         </div>

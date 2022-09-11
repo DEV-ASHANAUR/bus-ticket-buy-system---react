@@ -23,10 +23,10 @@ const Card = ({item,handleSeat}) => {
           <span className='title-style'>Arr.Time</span>
           <span>{item.arr_time}</span>
         </div>
-        <div className="avi-seats">
+        {/* <div className="avi-seats">
           <span className='title-style'>Seats-Available</span>
           <span>15</span>
-        </div>
+        </div> */}
         <div className="price">
           <span className='title-style'>Fare</span>
           <span>{item.price} Tk</span>

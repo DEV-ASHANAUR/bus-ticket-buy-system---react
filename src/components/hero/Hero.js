@@ -93,15 +93,11 @@ const Hero = () => {
                                     </div>
                                     <div>
                                         <span className='text-primary'><LocationOnIcon /></span>
-                                        <span>Dhaka to rajshai</span>
+                                        <span>Dhaka to Rajbari</span>
                                     </div>
                                 </div>
                                 <h4 className='route-title mt-5'>#Bus Operators</h4>
                                 <div className="route-list">
-                                    <div>
-                                        <span className='text-primary'><EmojiTransportationIcon /></span>
-                                        <span>Green Line Paribahan</span>
-                                    </div>
                                     <div>
                                         <span className='text-primary'><EmojiTransportationIcon /></span>
                                         <span>Hanif Paribahan</span>
@@ -109,6 +105,18 @@ const Hero = () => {
                                     <div>
                                         <span className='text-primary'><EmojiTransportationIcon /></span>
                                         <span>Rabeya Paribahan</span>
+                                    </div>
+                                    <div>
+                                        <span className='text-primary'><EmojiTransportationIcon /></span>
+                                        <span>GoldenLine Paribahan</span>
+                                    </div>
+                                    <div>
+                                        <span className='text-primary'><EmojiTransportationIcon /></span>
+                                        <span>Lalon Paribahan</span>
+                                    </div>
+                                    <div>
+                                        <span className='text-primary'><EmojiTransportationIcon /></span>
+                                        <span>Dipjol Paribahan</span>
                                     </div>
                                 </div>
                             </div>

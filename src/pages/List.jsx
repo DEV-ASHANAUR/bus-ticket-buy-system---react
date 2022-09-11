@@ -54,6 +54,7 @@ const List = () => {
         dispatch(startFetch());
         try {
             const res = await axios.get(`${Base_url}/bus?starting_point=${start}&ending_point=${end}`);
+            // console.log(res.data);
             dispatch(successFetch(res.data));
             setBuss(res.data.buss);
             setOperators(res.data.operator);
@@ -67,7 +68,7 @@ const List = () => {
 
   //apply filter
   const applyFilters = () => {
-    let updateDataList = data.buss;
+    let updateDataList = data?.buss;
     //filter by category
     //checkcuisines
     let checkedType = type.filter((item) => item.checked).map((item) => item.label);
@@ -84,7 +85,7 @@ const List = () => {
 
     //set update product
     setBuss(updateDataList);
-    !updateDataList.length ? setNotFound(true) : setNotFound(false);
+    !updateDataList?.length ? setNotFound(true) : setNotFound(false);
   }
   
   useEffect(()=>{
@@ -138,7 +139,7 @@ const List = () => {
                   <>
                     {
                       buss?.length ? (
-                        buss.map((item)=>(
+                        buss?.map((item)=>(
                           <Card  key={item._id} item={item} handleSeat={handleSeat} />
                         ))
                       ):

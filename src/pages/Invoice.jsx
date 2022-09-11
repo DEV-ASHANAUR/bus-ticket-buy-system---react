@@ -43,7 +43,7 @@ const Invoice = () => {
                         <h5>Customer Details</h5>
                         <p className='my-2 text-capitalize'>Name : {data.pasenName}</p>
                         <p className='my-2 text-capitalize'>Phone : {data.pasenMobile}</p>
-                        <p className='my-2 text-capitalize'>Email : {data.pasenEmail}</p>
+                        <p className='my-2'>Email : {data.pasenEmail}</p>
                         <p className='my-2 text-capitalize'>Address : {data.address}</p>
                         <h5>Payment Details</h5>
                         <p className='my-2 text-capitalize'>Payment Status : {data.status}</p>

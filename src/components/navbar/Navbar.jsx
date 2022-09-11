@@ -31,9 +31,9 @@ const Navbar = () => {
                                 <li className="nav-item ps-4">
                                     <NavLink className="nav-link" aria-current="page" exact to="/">Home</NavLink>
                                 </li>
-                                <li className="nav-item ps-4">
+                                {/* <li className="nav-item ps-4">
                                     <NavLink className="nav-link" aria-current="page" to="/list">List</NavLink>
-                                </li>
+                                </li> */}
                                 <li className="nav-item ps-4">
                                     <NavLink className="nav-link" aria-current="page" to="/contact">Contact</NavLink>
                                 </li>
